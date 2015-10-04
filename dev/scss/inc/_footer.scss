@@ -1,0 +1,16 @@
+.partner {
+	background: #ddd;
+	padding: 40px 0;
+}
+
+
+// -------------------------------
+// Footer
+// -------------------------------
+
+.footer {
+	background: $color-footer-bg url(../img/footer-bg.png) no-repeat right bottom;
+	background-size: 328px 328px;
+	color: $color-footer-text;
+	font-size: 14px;
+}

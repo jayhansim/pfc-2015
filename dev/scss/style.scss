@@ -1,0 +1,18 @@
+// include bourbon for useful sass mixins
+@import "bourbon";
+
+// always normalize it
+@import "inc/_normalize";
+
+// variables
+@import "inc/_var";
+
+// global
+@import "inc/_global";
+@import "inc/_grid";
+
+// import scss partials
+@import "inc/_header";
+
+
+@import "inc/_footer";

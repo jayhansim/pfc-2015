@@ -1,0 +1,40 @@
+// -------------------------------
+// Font Face
+// -------------------------------
+@font-face {
+  font-family: 'nexa_regularregular';
+  src: url('ff/fontfabric_-_nexaregular-webfont.eot');
+  src: url('ff/fontfabric_-_nexaregular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('ff/fontfabric_-_nexaregular-webfont.woff2') format('woff2'),
+       url('ff/fontfabric_-_nexaregular-webfont.woff') format('woff'),
+       url('ff/fontfabric_-_nexaregular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nexa_heavyregular';
+  src: url('ff/nexa_heavy-webfont.eot');
+  src: url('ff/nexa_heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('ff/nexa_heavy-webfont.woff2') format('woff2'),
+       url('ff/nexa_heavy-webfont.woff') format('woff'),
+       url('ff/nexa_heavy-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// -------------------------------
+// setting up global
+// -------------------------------
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	background: url(../img/bg.png) #f8f8f8;
+	background-size: 100px 100px;
+	font: 16px/1.5 $font;
+	color: $color;
+}
