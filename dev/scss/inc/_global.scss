@@ -38,3 +38,21 @@ body {
 	font: 16px/1.5 $font;
 	color: $color;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: $font-bold;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table {
+  margin: 0 0 15px;
+}
+
+a {
+  @include transition(all .1s);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

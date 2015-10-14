@@ -1,9 +1,38 @@
 				<section id="partner" class="partner">
 					<div class="container">
 						<div class="row">
-							<div class="grid text-center">
+							<div class="grid">
 
-								<p>Partner Logo</p>
+								<?php // WP_Query arguments
+								$args = array (
+
+									'post_type'          => 'partner',
+									'posts_per_page'         => '-1',
+								);
+
+								// The Query
+								$wp_query = new WP_Query( $args );
+
+								// The Loop
+								if ( $wp_query->have_posts() ) {
+									while ( $wp_query->have_posts() ) {
+										$wp_query->the_post(); ?>
+										<div class="partner__logo">
+											<?php if(the_field('link')): ?>
+												<a href="<?php the_field('link'); ?>">
+													<img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>" width="<?php the_field('width'); ?>">
+												</a>
+											<?php else: ?>
+												<img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>" width="<?php the_field('width'); ?>">
+											<?php endif; ?>
+										</div>
+								<?php	}
+								} else { ?>
+									// no posts found
+								<?php }
+
+								// Restore original Post Data
+								wp_reset_postdata(); ?>
 							</div>
 						</div>
 					</div>
@@ -13,49 +42,38 @@
 
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
-				<div class="container">
-					<div class="row">
-						<div class="grid-1-4">
-							<h5>Courses</h5>
-							<ul>
-								<li>-	NASM CPT Certification</li>
-								<li>-	Power Plate CPPT Certification</li>
-								<li>-	ViPR Certification</li>
-								<li>-	Rumble Roller </li>
-								<li>-	CPR Certification </li>
-							</ul>
-						</div>
-						<div class="grid-1-4">
-							<h5>PFC</h5>
-							<ul><li>-	Personal Training</li>
-							<li>-	Group and Corporate Training</li>
-							<li>- About Us</li>
-							<li>- Contact Us</li></ul>
 
-						</div>
-						<div class="grid-1-4">
-							<h5>Connect</h5>
-							<ul>
-								<li>Facebook</li>
-								<li>Twitter</li>
-								<li>Instagram</li>
-							</ul>
-						</div>
-						<div class="grid-1-4">
-							<h5>Quick Contact</h5>
-							Address, phone and email
+				<div class="footer-top">
+					<div class="container">
+						<div class="row">
+							<div class="grid-footer-top">
+								<?php dynamic_sidebar('footer-widget-1'); ?>
+							</div>
+							<div class="grid-footer-top">
+								<?php dynamic_sidebar('footer-widget-2'); ?>
+							</div>
+							<div class="grid-footer-top">
+								<?php dynamic_sidebar('footer-widget-3'); ?>
+							</div>
+							<div class="grid-footer-top">
+								<?php dynamic_sidebar('footer-widget-4'); ?>
+							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="row">
-						<div class="container">
-							<div class="grid">
-								<!-- copyright -->
-								<p class="copyright">
-									&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-									<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-								</p>
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="grid-footer-bottom grid-footer-bottom--logo">
+								<a href="/" class="footer__logo">
+									<img src="<?php echo get_template_directory_uri() . '/img/footer-pfc-logo.png' ?>" alt="PFC" width="150">
+								</a>
 							</div>
+							<div class="grid-footer-bottom grid-footer-bottom--copyright">
+								&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>.
+							</div>
+
 						</div>
 					</div>
 				</div>

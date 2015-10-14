@@ -191,6 +191,50 @@ if (function_exists('register_sidebar'))
         'before_title' => '<h3>',
         'after_title' => '</h3>'
     ));
+
+    // Footer Widget Area 1
+    register_sidebar(array(
+        'name' => __('Footer Area 1', 'html5blank'),
+        'description' => __('Footer Area 1', 'html5blank'),
+        'id' => 'footer-widget-1',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
+    ));
+
+    // Footer Widget Area 2
+    register_sidebar(array(
+        'name' => __('Footer Area 2', 'html5blank'),
+        'description' => __('Footer Area 2', 'html5blank'),
+        'id' => 'footer-widget-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
+    ));
+
+    // Footer Widget Area 3
+    register_sidebar(array(
+        'name' => __('Footer Area 3', 'html5blank'),
+        'description' => __('Footer Area 3', 'html5blank'),
+        'id' => 'footer-widget-3',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
+    ));
+
+    // Footer Widget Area 4
+    register_sidebar(array(
+        'name' => __('Footer Area 4', 'html5blank'),
+        'description' => __('Footer Area 4', 'html5blank'),
+        'id' => 'footer-widget-4',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
+    ));
 }
 
 // Remove wp_head() injected Recent Comment styles
