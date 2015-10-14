@@ -27,7 +27,6 @@
 
 	a {
 		color: #a6a6a6;
-		text-decoration: none;
 
 		&:hover {
 			color: $color-red;
@@ -142,7 +141,7 @@
 	font-size: 13px;
 	line-height: 30px;
 	color: darken($color-footer-text, 10);
-	background: rgba(#000, .25);
+	background: rgba(#000, .2);
 }
 
 .grid-footer-bottom {
