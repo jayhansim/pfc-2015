@@ -1,0 +1,25 @@
+// -------------------------------
+// LAYOUT
+// -------------------------------
+
+.content {
+	@include clearfix;
+}
+
+.content__main {
+	padding: 0 $margin;
+
+	@media (min-width: $tablet) {
+		width: percentage(8/$column);
+		float: left;
+	}
+}
+
+.content__side {
+	padding: 0 $margin;
+
+	@media (min-width: $tablet) {
+		width: percentage(4/$column);
+		float: left;
+	}
+}

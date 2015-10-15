@@ -1,44 +1,43 @@
-				<section id="partner" class="partner">
-					<div class="container">
-						<div class="row">
-							<div class="grid">
+			<section id="partner" class="partner">
+				<div class="container">
+					<div class="row">
+						<div class="grid">
 
-								<?php // WP_Query arguments
-								$args = array (
+							<?php // WP_Query arguments
+							$args = array (
 
-									'post_type'          => 'partner',
-									'posts_per_page'         => '-1',
-								);
+								'post_type'          => 'partner',
+								'posts_per_page'         => '-1',
+							);
 
-								// The Query
-								$wp_query = new WP_Query( $args );
+							// The Query
+							$wp_query = new WP_Query( $args );
 
-								// The Loop
-								if ( $wp_query->have_posts() ) {
-									while ( $wp_query->have_posts() ) {
-										$wp_query->the_post(); ?>
-										<div class="partner__logo">
-											<?php if(the_field('link')): ?>
-												<a href="<?php the_field('link'); ?>">
-													<img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>" width="<?php the_field('width'); ?>">
-												</a>
-											<?php else: ?>
+							// The Loop
+							if ( $wp_query->have_posts() ) {
+								while ( $wp_query->have_posts() ) {
+									$wp_query->the_post(); ?>
+									<div class="partner__logo">
+										<?php if(the_field('link')): ?>
+											<a href="<?php the_field('link'); ?>">
 												<img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>" width="<?php the_field('width'); ?>">
-											<?php endif; ?>
-										</div>
-								<?php	}
-								} else { ?>
-									// no posts found
-								<?php }
+											</a>
+										<?php else: ?>
+											<img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>" width="<?php the_field('width'); ?>">
+										<?php endif; ?>
+									</div>
+							<?php	}
+							} else { ?>
+								// no posts found
+							<?php }
 
-								// Restore original Post Data
-								wp_reset_postdata(); ?>
-							</div>
+							// Restore original Post Data
+							wp_reset_postdata(); ?>
 						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 
-			</main>
 
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">

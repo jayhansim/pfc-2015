@@ -1,0 +1,68 @@
+// -------------------------------
+// NAVIGATION
+// -------------------------------
+
+.nav {
+	float: right;
+	font-size: 14px;
+	font-family: $font-bold;
+	margin-top: 9px;
+	text-transform: uppercase;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		color: $color;
+
+		&:hover {
+			color: $color-red;
+		}
+	}
+
+	// main menu
+	> ul {
+
+		> li {
+			display: inline-block;
+
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+
+	}
+
+	.menu-item-has-children {
+		position: relative;
+
+		&:hover {
+			.sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	// sub menu
+	.sub-menu {
+		display: none;
+		position: absolute;
+		background: $color-darker;
+		font-family: $font;
+		text-transform: none;
+		text-align: center;
+		left: 50%;
+		@include transform(translateX(-50%));
+		z-index: 1;
+
+		a {
+			color: #ccc;
+			padding: 10px 20px;
+			display: block;
+			text-decoration: none;
+		}
+	}
+}

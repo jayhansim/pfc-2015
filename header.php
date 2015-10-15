@@ -19,14 +19,15 @@
 			<header class="header" role="banner">
 
 				<div class="container">
+
 					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<?php bloginfo('title'); ?>
-						</a>
+					<div class="header__logo">
+						<a href="<?php echo home_url(); ?>"></a>
 					</div>
-					<!-- /logo -->
+
+					<nav class="nav" role="navigation">
+						<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
+					</nav>
 				</div>
 
 
@@ -34,8 +35,4 @@
 			</header>
 			<!-- /header -->
 
-			<nav>
-				<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
-			</nav>
 
-			<main role="main">

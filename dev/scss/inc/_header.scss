@@ -5,4 +5,13 @@
 .header {
 	background: #fff;
 	padding: 15px 0;
+	@include clearfix;
+}
+
+.header__logo {
+	width: 180px;
+	height: 45px;
+	background: url(../img/pfc-logo.png) no-repeat;
+	background-size: 100% auto;
+	float: left;
 }

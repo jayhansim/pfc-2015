@@ -221,9 +221,81 @@ img {
 .grid-10-12 {
   width: 83.3333333333%; }
 
+.content::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.content__main {
+  padding: 0 10px; }
+  @media (min-width: 768px) {
+    .content__main {
+      width: 66.6666666667%;
+      float: left; } }
+
+.content__side {
+  padding: 0 10px; }
+  @media (min-width: 768px) {
+    .content__side {
+      width: 33.3333333333%;
+      float: left; } }
+
 .header {
   background: #fff;
   padding: 15px 0; }
+  .header::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.header__logo {
+  width: 180px;
+  height: 45px;
+  background: url(../img/pfc-logo.png) no-repeat;
+  background-size: 100% auto;
+  float: left; }
+
+.nav {
+  float: right;
+  font-size: 14px;
+  font-family: "nexa_heavyregular", "Helvetica Neue", Arial, sans-serif;
+  margin-top: 9px;
+  text-transform: uppercase; }
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .nav a {
+    color: #4a4a4a; }
+    .nav a:hover {
+      color: #e22727; }
+  .nav > ul > li {
+    display: inline-block; }
+    .nav > ul > li:not(:last-child) {
+      margin-right: 20px; }
+  .nav .menu-item-has-children {
+    position: relative; }
+    .nav .menu-item-has-children:hover .sub-menu {
+      display: block; }
+  .nav .sub-menu {
+    display: none;
+    position: absolute;
+    background: #2a2a2a;
+    font-family: "nexa_regularregular", "Helvetica Neue", Arial, sans-serif;
+    text-transform: none;
+    text-align: center;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1; }
+    .nav .sub-menu a {
+      color: #ccc;
+      padding: 10px 20px;
+      display: block;
+      text-decoration: none; }
 
 .partner {
   background: #ddd;
