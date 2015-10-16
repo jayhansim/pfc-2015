@@ -4,10 +4,11 @@
 
 .content {
 	@include clearfix;
+	padding: 60px 0 80px;
 }
 
 .content__main {
-	padding: 0 $margin;
+	padding: 0 15px;
 
 	@media (min-width: $tablet) {
 		width: percentage(8/$column);
@@ -16,10 +17,28 @@
 }
 
 .content__side {
-	padding: 0 $margin;
+	padding: 0 15px;
 
 	@media (min-width: $tablet) {
 		width: percentage(4/$column);
 		float: left;
 	}
+}
+
+// -------------------------------
+// SECTION
+// -------------------------------
+
+.section__page-title {
+	background: #fff url(../img/section-page-title-bg.png) right top no-repeat;
+	background-size: 262px 260px;
+	padding: 20px 0 10px;
+
+	.page-title {
+		margin-bottom: 0;
+	}
+}
+
+.page-title {
+	color: $color-red;
 }

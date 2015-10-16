@@ -3,9 +3,9 @@
 	<main role="main">
 
 		<!-- Page Title bar -->
-		<section class="page-title">
+		<section class="section__page-title">
 			<div class="container">
-				<h1><?php _e( 'Latest News', 'html5blank' ); ?></h1>
+				<h1 class="page-title"><?php _e( 'Latest News', 'html5blank' ); ?></h1>
 			</div>
 		</section>
 
