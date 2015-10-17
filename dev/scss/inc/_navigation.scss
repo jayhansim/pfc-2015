@@ -6,7 +6,6 @@
 	float: right;
 	font-size: 14px;
 	font-family: $font-bold;
-	margin-top: 9px;
 	text-transform: uppercase;
 
 	ul {
@@ -28,9 +27,10 @@
 
 		> li {
 			display: inline-block;
+			padding: 10px;
 
 			&:not(:last-child) {
-				margin-right: 20px;
+				margin-right: 5px;
 			}
 		}
 
@@ -41,14 +41,17 @@
 
 		&:hover {
 			.sub-menu {
-				display: block;
+				opacity: 1;
+				visibility: visible;
+				top: 100%;
 			}
 		}
 	}
 
 	// sub menu
 	.sub-menu {
-		display: none;
+		opacity: 0;
+		visibility: hidden;
 		position: absolute;
 		background: $color-darker;
 		font-family: $font;
@@ -56,13 +59,36 @@
 		text-align: center;
 		left: 50%;
 		@include transform(translateX(-50%));
+		@include transition(all .25s);
 		z-index: 1;
+		border-radius: 2px;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+		width: 180px;
+		top: 90%;
 
 		a {
 			color: #ccc;
 			padding: 10px 20px;
 			display: block;
 			text-decoration: none;
+
+			&:hover {
+				color: #fff;
+				background-color: rgba($color,.5);
+			}
+		}
+
+		&::before {
+			width: 0;
+			height: 0;
+			border-width: 8px;
+			border-style: solid;
+			border-color: transparent transparent $color-darker;
+			content: '';
+			position: absolute;
+			top: -16px;
+			left: 50%;
+			@include transform(translateX(-50%));
 		}
 	}
 }

@@ -14,13 +14,28 @@
 		width: percentage(8/$column);
 		float: left;
 	}
+
+	@media (min-width: $desktop) {
+		width: percentage(9/$column);
+		float: left;
+	}
 }
 
 .content__side {
 	padding: 0 15px;
 
+	@media (max-width: $mobile-max) {
+		padding-top: 30px;
+		border-top: 1px dashed #ccc;
+	}
+
 	@media (min-width: $tablet) {
 		width: percentage(4/$column);
+		float: left;
+	}
+
+	@media (min-width: $desktop) {
+		width: percentage(3/$column);
 		float: left;
 	}
 }
