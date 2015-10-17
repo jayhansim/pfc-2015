@@ -62,9 +62,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-bold;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table {
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table, blockquote {
   margin: 0 0 15px;
 }
 
-h1 {font-size: 36px}
-h2 {font-size: 27px}
+h1 {font-size: 36px; line-height: 1.1}
+h2 {font-size: 27px; line-height: 1.2}
+
+strong, b {font-family: $font-bold}
+
+// -------------------------------
+// List
+// -------------------------------
+
+ol, ul {
+  padding-left: 20px;
+}

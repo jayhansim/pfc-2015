@@ -1,0 +1,47 @@
+@mixin list-item() {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      background: url(../img/list-item-dot.svg) no-repeat;
+      width: 10px;
+      height: 10px;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+    }
+  }
+}
+
+@mixin form-input(){
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+  border-radius: 3px;
+  padding: 11px 10px;
+
+  &:active, &:focus {
+    /* Rectangle 327: */
+    border-color: #999;
+    //box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.30);
+    outline: 0;
+  }
+}
+
+@mixin button($btn-color: $color, $btn-color-hover: $color-red) {
+  color: #fff;
+  background: $btn-color;
+  font-family: $font-bold;
+  padding: 10px 20px;
+  display: inline-block;
+
+  &:hover {
+    background-color: $btn-color-hover;
+    color: #fff;
+  }
+}

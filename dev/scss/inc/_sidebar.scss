@@ -2,6 +2,7 @@
 // SIDEBAR
 // -------------------------------
 .content__side {
+  font-size: 14px;
 
   // give a margin space between widgets
   > *:not(:last-child) {
@@ -11,8 +12,7 @@
     margin-bottom: 5px;
   }
   ul {
-    list-style: none;
-    padding-left: 0;
+    @include list-item;
 
     a {
       color: $color-lighter;
@@ -22,21 +22,6 @@
         color: $color-red;
         text-decoration: underline;
       }
-    }
-  }
-
-  li {
-    position: relative;
-    padding-left: 20px;
-
-    &::before {
-      background: url(../img/list-item-dot.svg) no-repeat;
-      width: 10px;
-      height: 10px;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 6px;
     }
   }
 }
