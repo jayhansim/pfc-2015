@@ -1,0 +1,19 @@
+// -------------------------------
+// FORM
+// -------------------------------
+
+.form-control {
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+	border-radius: 3px;
+	padding: 10px;
+	width: 100%;
+
+	&:active, &:focus {
+		/* Rectangle 327: */
+		border-color: #999;
+		//box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.30);
+		outline: 0;
+	}
+}

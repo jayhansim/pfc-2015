@@ -9,6 +9,7 @@ $color: #4a4a4a;
 $color-darker: #2a2a2a;
 $color-lighter: #888;
 $color-red: #e22727;
+	$color-red-lighten: lighten($color-red, 8);
 
 $color-footer-text: #888;
 $color-footer-bg: $color-darker;

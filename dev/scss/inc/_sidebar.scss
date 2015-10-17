@@ -40,3 +40,38 @@
     }
   }
 }
+
+
+// Search Form
+.form-search {
+  position: relative;
+
+  .form-control {
+    padding-right: 40px;
+  }
+
+  .btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background: none;
+    padding: 0 15px;
+
+    &:hover, &:focus {
+      path {
+        fill: $color;
+      }
+    }
+
+    svg {
+      margin-top: 6px;
+
+      path {
+        fill: $color-lighter;
+        @include transition(fill .1s linear);
+      }
+    }
+  }
+}

@@ -44,7 +44,7 @@ a {
   color: $color-red;
 
   &:hover {
-    color: lighten($color-red, 8);
+    color: $color-red-lighten;
   }
 }
 
@@ -66,5 +66,5 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table {
   margin: 0 0 15px;
 }
 
-h1 {font-size: 40px}
+h1 {font-size: 36px}
 h2 {font-size: 27px}
