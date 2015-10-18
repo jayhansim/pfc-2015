@@ -1,0 +1,98 @@
+// -------------------------------
+// PAGE - COMMON
+// -------------------------------
+.section__page-title--page {
+	.page-title {
+		color: $color-darker;
+		margin: 0 0 20px;
+	}
+}
+
+
+// -------------------------------
+// PAGE - CUSTOM STYLE
+// -------------------------------
+
+.section__page-header {
+	background-color: $color-darker;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: $color-darker-text;
+
+	.page-title {
+		font-family: $font-display;
+		font-size: 72px;
+	}
+
+	.lead {
+		color: #fff;
+		font-size: 24px;
+	}
+}
+
+// -------------------------------
+// SECTION STYLES
+// -------------------------------
+section[class*="section__"] {
+	padding: 60px 0;
+}
+
+// Section Red
+.section--red {
+	background: url(../img/bg-red.png) $color-red;
+	background-size: 100px auto;
+	color: #ffd2d2;
+	position: relative;
+
+	h1, h2, h3, h4, h5, h6, b, strong {
+		color: #fff
+	}
+
+	&.stripes {
+		&::before {
+			content: '';
+			background: url(../img/bg-red-stripes.png) center top no-repeat;
+			background-size: 920px auto;
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+
+.section__header {text-align: center;}
+
+.section-title {
+	&--display {
+		font-family: $font-display;
+		font-size: 54px;
+	}
+}
+
+// -------------------------------
+// PAGE - ABOUT
+// -------------------------------
+
+.section__page-header {
+	&--about {
+		background-image: url(../img/about-header-bg.jpg);
+
+	}
+}
+
+.map {
+	height: 600px;
+}
+
+.section__about__courses {
+	background: url(../img/about-course-bg.jpg) left no-repeat #e3e4e2;
+	background-size: 50% auto;
+
+	@at-root .about__courses {
+		width: 50%;
+		position: relative;
+		left: 50%;
+	}
+}

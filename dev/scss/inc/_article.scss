@@ -290,13 +290,3 @@ blockquote {
 		@include button($color-red, $color-red-lighten);
 	}
 }
-
-// -------------------------------
-// PAGE
-// -------------------------------
-.section__page-title--page {
-	.page-title {
-		color: $color-darker;
-		margin: 0 0 20px;
-	}
-}

@@ -66,10 +66,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table, blockquote {
   margin: 0 0 15px;
 }
 
-h1 {font-size: 36px; line-height: 1.1}
-h2 {font-size: 27px; line-height: 1.2}
+h1, .h1 {font-size: 36px; line-height: 1.1}
+h2, .h2 {font-size: 27px; line-height: 1.2}
+h5, .h5 {font-size: 18px;}
 
-strong, b {font-family: $font-bold}
+strong, b, .lead {font-family: $font-bold}
 
 // -------------------------------
 // List

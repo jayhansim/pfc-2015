@@ -95,6 +95,9 @@ function html5blank_header_scripts()
         // wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         // wp_enqueue_script('modernizr'); // Enqueue it!
 
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, '1.11.3', false);
+
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
     }
@@ -103,10 +106,10 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
+    // if (is_page_template('page-about.php')) {
+    //     wp_register_script('google-map', '//maps.googleapis.com/maps/api/js?sensor=false'); // Custom scripts
+    //     wp_enqueue_script('google-map'); // Enqueue it!
+    // }
 }
 
 // Load HTML5 Blank styles
