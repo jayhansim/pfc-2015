@@ -60,6 +60,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: $font-bold;
+  color: $color-darker;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table, blockquote {
@@ -71,6 +72,12 @@ h2, .h2 {font-size: 27px; line-height: 1.2}
 h5, .h5 {font-size: 18px;}
 
 strong, b, .lead {font-family: $font-bold}
+
+*:not(img) {
+  + h2, + h3, + h4, + h5, + h6 {
+    margin-top: 45px;
+  }
+}
 
 // -------------------------------
 // List

@@ -24,6 +24,21 @@ textarea {
 			background-color: $color-red-lighten;
 		}
 	}
+
+	&-white {
+		background-color: #fff;
+		color: $color-red;
+
+		&:hover {
+			color: #fff;
+			background-color: $color-darker;
+		}
+	}
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
 }
 
 input[type="button"], input[type="submit"], button {

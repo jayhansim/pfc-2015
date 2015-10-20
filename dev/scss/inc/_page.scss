@@ -33,8 +33,23 @@
 // -------------------------------
 // SECTION STYLES
 // -------------------------------
-section[class*="section__"] {
+.section {
 	padding: 60px 0;
+}
+
+// Page title
+.section__page-title {
+	background: #fff url(../img/section-page-title-bg.png) right top no-repeat;
+	background-size: 322px auto;
+	padding: 30px 0 20px;
+
+	.page-title {
+		margin-bottom: 0;
+	}
+}
+
+.page-title {
+	color: $color-red;
 }
 
 // Section Red
@@ -46,6 +61,10 @@ section[class*="section__"] {
 
 	h1, h2, h3, h4, h5, h6, b, strong {
 		color: #fff
+	}
+
+	a:not(.btn) {
+		color: #fff;
 	}
 
 	&.stripes {
@@ -62,7 +81,13 @@ section[class*="section__"] {
 }
 
 
-.section__header {text-align: center;}
+.section__header {
+	text-align: center;
+
+	@media (min-width: $desktop) {
+		padding: 0 10%;
+	}
+}
 
 .section-title {
 	&--display {
@@ -87,12 +112,100 @@ section[class*="section__"] {
 }
 
 .section__about__courses {
-	background: url(../img/about-course-bg.jpg) left no-repeat #e3e4e2;
-	background-size: 50% auto;
+	background: url(../img/about-course-bg.jpg) -200px no-repeat #e3e4e2;
+	background-size: auto 120%;
+
+	@media (min-width: $tablet) {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
+
+	@media (min-width: $desktop) {
+		background-position-x: -100px;
+	}
+
+	@media (max-width: $mobile-max) {
+		background-position: center bottom -200px;
+		background-size: $mobile-max auto;
+		padding-bottom: 400px;
+	}
 
 	@at-root .about__courses {
-		width: 50%;
-		position: relative;
-		left: 50%;
+		text-align: center;
+
+
+		@media (min-width: $tablet) {
+			width: 50%;
+			position: relative;
+			left: 50%;
+			text-align: left;
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		a {
+			font-family: $font-bold;
+
+			&::before {
+				content: "> ";
+			}
+		}
 	}
+}
+
+.section__about__trainers {
+	text-align: center;
+
+	.btn {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}
+
+.trainers {
+	list-style: none;
+	padding-left: 0;
+	@include clearfix;
+	font-size: 14px;
+
+	.trainer {
+		position: relative;
+		margin: 30px 0;
+
+		@media (min-width: $tablet) {
+			width: percentage(1/3);
+			padding: 0 15px;
+			float: left;
+		}
+
+		&__image {
+			border-radius: 50%;
+			border: 3px solid #fff;
+			max-width: 80px;
+			height: auto;
+		}
+
+		&__profile {
+
+			h5 {
+				margin-bottom: 5px;
+			}
+
+			*:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.section__about__studio {
+	background: #fff;
+}
+
+.map {
+	margin-top: 20px;
+	box-shadow: 0 2px 10px rgba(0,0,0,.1);
 }

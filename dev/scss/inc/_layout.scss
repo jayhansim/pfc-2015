@@ -39,21 +39,3 @@
 		float: left;
 	}
 }
-
-// -------------------------------
-// SECTION
-// -------------------------------
-
-.section__page-title {
-	background: #fff url(../img/section-page-title-bg.png) right top no-repeat;
-	background-size: 322px auto;
-	padding: 30px 0 20px;
-
-	.page-title {
-		margin-bottom: 0;
-	}
-}
-
-.page-title {
-	color: $color-red;
-}
