@@ -21,12 +21,15 @@
 
 	.page-title {
 		font-family: $font-display;
-		font-size: 72px;
+		font-size: 56px;
+
+		@media (min-width: $tablet) {
+			font-size: 72px;
+		}
 	}
 
 	.lead {
 		color: #fff;
-		font-size: 24px;
 	}
 }
 
@@ -70,10 +73,11 @@
 	&.stripes {
 		&::before {
 			content: '';
-			background: url(../img/bg-red-stripes.png) center top no-repeat;
-			background-size: 920px auto;
+			background: url(../img/bg-red-stripes.png) center no-repeat;
+			background-size: 1066px auto;
 			position: absolute;
 			top: 0;
+			left: 0;
 			height: 100%;
 			width: 100%;
 		}
@@ -122,6 +126,10 @@
 
 	@media (min-width: $desktop) {
 		background-position-x: -100px;
+	}
+
+	@media (min-width: $desktop-lg) {
+		background-position-x: 0;
 	}
 
 	@media (max-width: $mobile-max) {
@@ -208,4 +216,14 @@
 .map {
 	margin-top: 20px;
 	box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+
+// -------------------------------
+// PAGE - 404
+// -------------------------------
+.error404 {
+	.content {
+		padding: 100px 0;
+	}
 }

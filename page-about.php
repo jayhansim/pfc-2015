@@ -85,7 +85,7 @@
 					<?php // WP_Query arguments
 					$args = array (
 						'post_type'          => 'trainer',
-						'posts_per_page'         => '-1',
+						'posts_per_page'         => '3',
 					);
 
 					// The Query
