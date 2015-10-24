@@ -37,3 +37,22 @@ $column: 12;
 // 		float: none;
 // 	}
 // }
+
+
+// Flexbox
+.row-flex {
+	@include display(flex);
+	@include flex-wrap(wrap);
+}
+
+[class^="flex-"] {
+	padding: 0 15px;
+}
+
+.flex-6-12 {width: 50%}
+
+@media (max-width: $mobile-max) {
+	.flex-mobile {
+		width: 100%;
+	}
+}

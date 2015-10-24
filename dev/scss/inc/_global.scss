@@ -69,6 +69,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, dl, table, blockquote {
 
 h1, .h1 {font-size: 36px; line-height: 1.1}
 h2, .h2 {font-size: 27px; line-height: 1.2}
+h3, .h3 {font-size: 24px; line-height: 1.2}
+h4, .h4 {font-size: 21px;}
 h5, .h5 {font-size: 18px;}
 
 .font-display {font-family: $font-display;}
@@ -83,9 +85,9 @@ strong, b, .lead {font-family: $font-bold}
   }
 }
 
-*:not(img, h2, h3, h4, h5, h6) {
+*:not(img), *:not(h2), *:not(h3), *:not(h4), *:not(h5), *:not(h6) {
   + h2, + h3, + h4, + h5, + h6 {
-    margin-top: 45px;
+    margin-top: 30px;
   }
 }
 

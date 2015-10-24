@@ -1,0 +1,225 @@
+// -------------------------------
+// POST TYPE - COMMON
+// -------------------------------
+
+// Archive
+.post__image {
+	height: 240px;
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+	position: relative;
+	@include transition-duration(.5s);
+
+	&:hover {
+		background-size: 105% auto;
+	}
+}
+
+// Single
+.single-fitness {
+	.page-title {
+		@media (min-width: $tablet) {
+			font-size: 60px;
+		}
+	}
+}
+
+.header__cta {
+	margin-top: 30px;
+}
+
+.section__content {
+	padding-top: 0;
+
+	h2 {
+		position: relative;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		font-size: 30px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 70px;
+			height: 10px;
+			background: $color-red;
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+	h3 {
+		color: $color-red;
+	}
+
+	ul {
+		@include list-item;
+	}
+
+	&--main {
+		background: #fff;
+		background:
+			url(../img/bg-element-star.png) right -60px bottom -60px no-repeat,
+			#fff;
+		background-size: 359px 333px;
+		box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.10);
+		padding: 50px 30px;
+		margin-bottom: 45px;
+		margin-top: -10px;
+
+		@media (min-width: $tablet) {
+			padding: 60px 100px;
+		}
+	}
+
+	&--gallery {
+		background-color: $color-darker;
+		color: $color-darker-text;
+		padding: 50px 30px;
+		text-align: center;
+		margin-top: -15px;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.gallery {
+	&-title {
+		font-family: $font-display;
+		text-transform: uppercase;
+		font-size: 54px;
+		color: #b7b7b7;
+		display: block;
+		text-align: center;
+		line-height: 1;
+	}
+
+	&-image {
+		width: 250px;
+		border: 10px solid #fff;
+		margin: 0 5px;
+	}
+}
+
+.section__cta {
+	background: #fff;
+
+	&__form {
+		background: #f4f4f4;
+		box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.20);
+		padding: 30px;
+		margin-top: 30px;
+		position: relative;
+
+		&::after {
+			width: 100%;
+			height: 0;
+			position: absolute;
+			content: '';
+			border-top: 1px dashed $color-darker-text;
+			bottom: 3px;
+			left: 0;
+		}
+	}
+}
+
+
+// Gravity Form
+.gform_wrapper .right_label input.medium, .gform_wrapper .right_label select.medium, .gform_wrapper .left_label input.medium, .gform_wrapper .left_label select.medium, .gform_wrapper textarea {
+	width: 100% !important;
+
+	@media (min-width: $desktop) {
+		width: 70% !important;
+	}
+}
+
+.gform_wrapper input[type=text], .gform_wrapper input[type=url], .gform_wrapper input[type=email], .gform_wrapper input[type=tel], .gform_wrapper input[type=number], .gform_wrapper input[type=password] {
+	padding: 11px 10px !important;
+	font-size: 16px !important;
+}
+
+.section__cta {
+	.gform_wrapper .left_label .gfield_label {
+		margin-right: 0;
+		padding-right: 15px;
+		text-align: right;
+		font-family: $font-bold;
+		margin-top: 10px;
+	}
+	.left_label {
+		.gfield {
+			@include clearfix;
+		}
+		.ginput_container {
+			float: left;
+			width: 71%;
+		}
+	}
+
+	.gform_wrapper .gform_footer.right_label, .gform_wrapper .gform_footer.left_label {
+		padding-left: 29%;
+		//text-align: center;
+
+		@media (max-width: $mobile-max) {
+			padding-left: 0;
+			padding-right: 0;
+
+			.gform_button {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: $mobile-max) {
+		.gform_wrapper {
+			.left_label {
+				.gfield_label, .ginput_container {
+					float: none;
+					width: auto;
+				}
+
+			}
+		}
+
+	}
+}
+
+// -------------------------------
+// POST TYPE - FITNESS
+// -------------------------------
+
+.fitness {
+	.post__image {
+		&::before {
+			content: '';
+			position: absolute;
+			background: url(../img/fitness-icon.svg) no-repeat;
+			width: 83px;
+			height: 90px;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%,-50%));
+		}
+	}
+
+	&.category-group-training {
+		.post__image::before {
+			width: 124px;
+			background-position: -83px 0;
+		}
+	}
+}
+
+.single-fitness {
+	.section__page-header {
+		@media (min-width: $tablet) {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+	}
+}
+
+

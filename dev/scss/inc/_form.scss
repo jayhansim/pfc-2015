@@ -34,6 +34,17 @@ textarea {
 			background-color: $color-darker;
 		}
 	}
+
+	&-white--hover-red {
+		&:hover {
+			background-color: $color-red;
+		}
+	}
+
+	&-lg {
+		font-size: 21px;
+		padding: 12px 30px;
+	}
 }
 
 .btn-block {
