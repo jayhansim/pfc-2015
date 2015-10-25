@@ -43,7 +43,11 @@ textarea {
 
 	&-lg {
 		font-size: 21px;
-		padding: 12px 30px;
+		padding: 12px 40px;
+	}
+
+	&-text {
+		background-color: transparent;
 	}
 }
 

@@ -4,7 +4,6 @@
 .section__page-title--page {
 	.page-title {
 		color: $color-darker;
-		margin: 0 0 20px;
 	}
 }
 
@@ -14,9 +13,8 @@
 // -------------------------------
 
 .section__page-header {
-	background-color: $color-darker;
+	background: $color-darker center no-repeat;
 	background-size: cover;
-	background-repeat: no-repeat;
 	color: $color-darker-text;
 	position: relative;
 
@@ -59,6 +57,10 @@
 	background: #fff url(../img/section-page-title-bg.png) right top no-repeat;
 	background-size: 322px auto;
 	padding: 30px 0 20px;
+
+	.page-title:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .page-title {

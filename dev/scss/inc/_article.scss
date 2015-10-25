@@ -8,6 +8,15 @@
 	margin-bottom: 40px;
 }
 
+.hentry-dark {
+	background-color: $color-darker;
+	color: $color-lighter;
+
+	a, .post-title a {
+		color: #fff;
+	}
+}
+
 // Post Header
 .post__header {
 	padding: 30px;

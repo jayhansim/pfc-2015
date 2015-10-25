@@ -5,10 +5,15 @@
 $column: 12;
 
 .container {
-	max-width: 1200px;
+	width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
 	position: relative;
+
+	@media (max-width: $desktop-max) {
+		max-width: 992px;
+		width: 100%;
+	}
 }
 
 .row {
@@ -47,6 +52,7 @@ $column: 12;
 
 [class^="flex-"] {
 	padding: 0 15px;
+	@include display(flex);
 }
 
 .flex-6-12 {width: 50%}

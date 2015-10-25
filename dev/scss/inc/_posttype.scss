@@ -5,17 +5,41 @@
 // Archive
 .post__image {
 	height: 240px;
-	background-size: 100% auto;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	display: block;
 	position: relative;
 	@include transition-duration(.5s);
+	// opacity: .7;
 
-	&:hover {
-		background-size: 105% auto;
+	// &:hover {
+	// 	opacity: 1;
+	// }
+}
+
+.post__cta {
+	margin-top: 10px;
+}
+
+.row-flex article {
+	@include display(flex);
+	@include flex-direction(column);
+	width: 100%;
+
+	.post__body {
+		@include display(flex);
+		@include flex-direction(column);
+		@include flex(1 0 auto);
+
+
+		p {
+			@include flex(1 0 auto);
+		}
 	}
 }
+
+
 
 // Single
 .single-fitness {
@@ -125,6 +149,40 @@
 	}
 }
 
+// -------------------------------
+// POST TYPE - FITNESS
+// -------------------------------
+
+.fitness {
+	.post__image {
+		&::before {
+			content: '';
+			position: absolute;
+			background: url(../img/fitness-icon.svg) no-repeat;
+			width: 83px;
+			height: 90px;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%,-50%));
+		}
+	}
+
+	&.category-group-training {
+		.post__image::before {
+			width: 124px;
+			background-position: -83px 0;
+		}
+	}
+}
+
+.single-fitness, .single-course {
+	.section__page-header {
+		@media (min-width: $tablet) {
+			padding-top: 90px;
+			padding-bottom: 90px;
+		}
+	}
+}
 
 // Gravity Form
 .gform_wrapper .right_label input.medium, .gform_wrapper .right_label select.medium, .gform_wrapper .left_label input.medium, .gform_wrapper .left_label select.medium, .gform_wrapper textarea {
@@ -187,39 +245,72 @@
 	}
 }
 
-// -------------------------------
-// POST TYPE - FITNESS
-// -------------------------------
 
-.fitness {
+// -------------------------------
+// POST TYPE - FORM
+// -------------------------------
+.tag-featured {
+	position: relative;
+
+	.post__body {
+
+		&::after {
+			content: 'featured';
+			text-transform: uppercase;
+			font-family: $font-display;
+			background-color: $color-red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 3px 8px;
+			color: #fff;
+			@include transform(rotate(-90deg) translateX(-100%));
+			@include transform-origin(0 0);
+		}
+	}
+}
+
+.course {
 	.post__image {
 		&::before {
 			content: '';
 			position: absolute;
-			background: url(../img/fitness-icon.svg) no-repeat;
-			width: 83px;
-			height: 90px;
+			background: url(../img/course-icon.png) no-repeat;
+			background-size: 384px 252px;
+			width: 214px;
+			height: 47px;
 			top: 50%;
 			left: 50%;
 			@include transform(translate(-50%,-50%));
 		}
 	}
 
-	&.category-group-training {
+	&.category-power-plate {
 		.post__image::before {
-			width: 124px;
-			background-position: -83px 0;
+			width: 131px;
+			height: 108px;
+			background-position: 0 -47px;
+		}
+	}
+	&.category-vipr {
+		.post__image::before {
+			width: 121px;
+			height: 121px;
+			background-position: -256px -129px;
+		}
+	}
+	&.category-cpr-certification {
+		.post__image::before {
+			width: 245px;
+			height: 88px;
+			background-position: 0 -163px;
+		}
+	}
+	&.category-rumble-roller {
+		.post__image::before {
+			width: 167px;
+			height: 112px;
+			background-position: -217px -4px;
 		}
 	}
 }
-
-.single-fitness {
-	.section__page-header {
-		@media (min-width: $tablet) {
-			padding-top: 90px;
-			padding-bottom: 90px;
-		}
-	}
-}
-
-
