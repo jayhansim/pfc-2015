@@ -50,6 +50,10 @@
 // -------------------------------
 .section {
 	padding: 60px 0;
+
+	&.no-padding {
+		padding: 0;
+	}
 }
 
 // Page title
@@ -110,6 +114,33 @@
 		font-family: $font-display;
 		font-size: 54px;
 	}
+}
+
+// -------------------------------
+// PAGE - HOME
+// -------------------------------
+
+.section__home__fitness {
+	background: url(../img/home-fitness-bg.jpg) center top no-repeat #d4d6d5;
+	background-size: 650px auto;
+
+	&.section {
+		padding-bottom: 0
+	}
+}
+
+.section__home__why {
+	background: url(../img/home-why-bg.jpg) no-repeat $color;
+	background-size: cover;
+	color: $color-darker-text;
+
+	.section-title {
+		color: #fff;
+	}
+}
+
+.section__home__shop {
+	background-color: #fff;
 }
 
 // -------------------------------
