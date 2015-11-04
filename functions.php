@@ -96,7 +96,9 @@ function html5blank_header_scripts()
         // wp_enqueue_script('modernizr'); // Enqueue it!
 
         wp_deregister_script('jquery');
-        wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, '1.11.3', false);
+        //wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", false, '1.11.3', false);
+        wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-1.11.3.min.js', false, '1.11.3', false);
+        wp_enqueue_script('jquery');
 
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
@@ -116,8 +118,8 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    wp_register_style('black-ops', '//fonts.googleapis.com/css?family=Black+Ops+One');
-    wp_enqueue_style('black-ops');
+    // wp_register_style('black-ops', '//fonts.googleapis.com/css?family=Black+Ops+One');
+    // wp_enqueue_style('black-ops');
 
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!

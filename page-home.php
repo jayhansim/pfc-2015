@@ -117,6 +117,7 @@
 		</section>
 
 
+
 		<!-- Testimonial -->
 		<?php // WP_Query arguments
 		$args = array (
@@ -129,16 +130,27 @@
 
 		// The Loop
 		if ( $testimonial_query->have_posts() ) { ?>
-			<section class="section section__home__testimonial">
+			<section class="section section--lg section__home__testimonial">
 				<div class="container">
 					<div class="section__header">
 						<h2 class="section-title section-title--display">Clients <span class="color-red">say:</span></h2>
 					</div>
-					<ul class="testimonial">
+					<ul class="testimonials">
 
 					<?php while ( $testimonial_query->have_posts() ) {
 						$testimonial_query->the_post(); ?>
-						<li><?php the_content(); ?></li>
+						<li class="testimonial">
+							<img src="<?php the_field('customer_image'); ?>" class="testimonial__portrait" alt="">
+							<div class="testimonial__content">
+								<?php the_content(); ?>
+
+								<div class="testimonial__testimonee">
+									<h6><?php the_field('customer_name'); ?></h6>
+									<span class="testimonee__course"><?php the_field('course_involved'); ?></span>
+								</div>
+							</div>
+
+						</li>
 					<?php	} //end while ?>
 					</ul>
 				</div>
@@ -150,25 +162,26 @@
 		wp_reset_postdata(); ?>
 
 
+
 		<!-- Why PFC -->
-		<section class="section section__home__why">
+		<section class="section section--lg section__home__why">
 			<div class="container">
 				<div class="section__header">
 					<h2 class="section-title section-title--display">What makes us <span class="color-red">different</span></h2>
-					<?php if (have_rows('why_pfc')): ?>
+				</div>
+				<?php if (have_rows('why_pfc')): ?>
 					<?php $count = 1; ?>
 					<ul class="why">
 						<?php while (have_rows('why_pfc')) : the_row(); ?>
 						<li class="why-<?php $count ?>;">
 							<i class="why__icon"></i>
-							<h5><?php the_sub_field('title'); ?></h5>
+							<h4 class="color-red"><?php the_sub_field('title'); ?></h4>
 							<p><?php the_sub_field('description'); ?></p>
 						</li>
 						<?php $count++; ?>
 						<?php endwhile; ?>
 					</ul>
 					<?php endif; ?>
-				</div>
 			</div>
 		</section>
 

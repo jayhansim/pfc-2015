@@ -40,6 +40,7 @@
   padding: 10px 30px;
   display: inline-block;
   box-shadow: 0 0 0 rgba(0,0,0,0);
+  @include transition(all .1s linear);
 
   &:hover {
     background-color: $btn-color-hover;
