@@ -57,6 +57,10 @@
 
 	&--lg {
 		padding: 90px 0;
+
+		@media (min-width: $tablet) {
+			padding: 120px 0;
+		}
 	}
 }
 
@@ -116,7 +120,11 @@
 .section-title {
 	&--display {
 		font-family: $font-display;
-		font-size: 54px;
+		font-size: 40px;
+
+		@media (min-width: $tablet) {
+			font-size: 54px;
+		}
 	}
 }
 
@@ -124,27 +132,251 @@
 // PAGE - HOME
 // -------------------------------
 
-.section__home__fitness {
-	background: url(../img/home-fitness-bg.jpg) center top no-repeat #d4d6d5;
-	background-size: 650px auto;
-
-	&.section {
-		padding-bottom: 0
-	}
-}
-
-.section__home__why {
-	background: url(../img/home-why-bg.jpg) no-repeat $color;
+// Courses
+.home__course--featured {
+	height: 75vh;
 	background-size: cover;
-	color: $color-darker-text;
+	background-position: center top;
+	position: relative;
+	background-color: $color;
+	color: #fff;
 
-	.section-title {
+	&::after {
+		content: 'featured';
+		text-transform: uppercase;
+		font-family: $font-display;
+		background-color: $color-red;
+		position: absolute;
+		top: 27.5%;
+		left: 0;
+		padding: 3px 12px;
 		color: #fff;
+		@include transform(rotate(-90deg) translateX(-100%));
+		@include transform-origin(0 0);
+
+		@media (max-width: $mobile-max) {
+			top: 0;
+			font-size: 13px;
+		}
+	}
+
+	.container {
+		top: 50%;
+		@include transform(translateY(-45%));
+
+		@media (max-width: $mobile) {
+			@include transform(translateY(-50%));
+		}
+	}
+
+	h1 {
+		font-size: 180px;
+		font-family: $font-display;
+		color: $color-red;
+		margin-bottom: 0;
+		line-height: 1;
+
+		a {
+			text-decoration: none;
+		}
+
+		@media (max-width: $mobile-max) {
+			font-size: 120px;
+		}
+
+		@media (max-width: $mobile) {
+			font-size: 75px;
+		}
+	}
+
+	p {
+		font-size: 72px;
+		font-family: $font-bold;
+		line-height: 1;
+		margin-bottom: 60px;
+
+		@media (min-width: $desktop-lg) {
+			width: 50%;
+		}
+
+		@media (max-width: $mobile-max) {
+			font-size: 48px;
+			margin-bottom: 40px;
+		}
+
+		@media (max-width: $mobile) {
+			font-size: 30px;
+		}
+	}
+
+	.btn {
+		background: none;
+		padding: 0;
+
+		&:hover {
+			box-shadow: none;
+			color: $color-red;
+		}
+	}
+
+	@media (min-width: $mobile) {
+		min-height: 600px;
+	}
+
+	@media (max-width: $tablet-max) {
+		text-align: center;
 	}
 }
 
-.section__home__shop {
-	background-color: #fff;
+.home__course {
+	position: relative;
+
+	&::after {
+		width: 42px;
+		height: 40px;
+		background: url(../img/deco-star.svg) no-repeat;
+		content: '';
+		position: absolute;
+		top: -20px;
+		left: 50%;
+		@include transform(translateX(-50%));
+
+		.no-svg & {
+			background-image: url(../img/deco-star.png);
+		}
+	}
+
+	h3 {
+		margin-bottom: 40px;
+	}
+	ul {
+		padding-left: 0;
+		list-style: none;
+		@include clearfix;
+		margin: 0 -10px;
+	}
+
+	li {
+		float: left;
+		padding: 0 10px;
+		width: 25%;
+		text-align: center;
+
+		@media (max-width: $desktop-max) {
+			width: 50%;
+		}
+
+		@media (max-width: $mobile-max) {
+			width: auto;
+			float: none;
+		}
+	}
+
+	.hentry {
+		display: block;
+		margin-bottom: 20px;
+		padding: 20px;
+		height: 388px;
+		background-size: cover;
+		background-position: center;
+		background-color: $color;
+		position: relative;
+
+		&:hover {
+			box-shadow: 4px 4px 0 rgba(0,0,0,.15);
+		}
+
+		@media (max-width: $desktop-max) {
+			height: auto;
+			padding-bottom: 40px;
+		}
+	}
+
+	// .post__image {
+	// 	@media (min-width:)
+	// }
+
+	span {
+		font-family: $font-bold;
+		font-size: 18px;
+		text-decoration: underline;
+
+		@media (min-width: $desktop-lg) {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 40px;
+		}
+	}
+}
+
+// fitness
+
+.section__home__fitness {
+	background: url(../img/home-fitness-bg.jpg) center no-repeat #d4d6d5;
+	background-size: 800px auto;
+	padding-top: 120px;
+	padding-bottom: 0;
+
+	@media (max-width: $mobile-max) {
+		background-position: center top;
+		background-size: 500px auto;
+	}
+
+	.section__header {
+		h2 {
+			text-shadow: 0px 0px 8px rgba($color-red, .4);
+			margin-bottom: 0;
+
+			@media (min-width: $tablet) {
+				font-size: 80px;
+			}
+		}
+
+		p {
+			font-family: $font-bold;
+			font-size: 27px;
+			color: #fff;
+			text-shadow: 0px 1px 0px rgba(0,0,0,.2);
+			line-height: 1.2;
+		}
+	}
+
+	.row-flex {
+		position: relative;
+		top: 40px;
+
+		@media (min-width: $tablet) {
+			margin-top: 20px;
+			top: 20px;
+		}
+
+	}
+
+	.hentry {
+		margin-bottom: 20px;
+
+		@media (min-width: $tablet) {
+			margin-bottom: 0
+		}
+	}
+
+	.type-fitness {
+		i {
+			background: url(../img/fitness-icon.svg) left bottom no-repeat;
+			width: 83px;
+			height: 90px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		&.category-group-training {
+			i {
+				width: 124px;
+				background-position: right bottom;
+			}
+		}
+	}
 }
 
 
@@ -176,7 +408,6 @@
 	&__content {
 		@media (min-width: $mobile) {
 			padding-left: 95px;
-			font-size: 18px;
 		}
 
 		@media (max-width: $mobile - 1px) {
@@ -265,6 +496,16 @@
 
 
 // why
+.section__home__why {
+	background: url(../img/home-why-bg.jpg) no-repeat $color;
+	background-size: cover;
+	color: $color-darker-text;
+
+	.section-title {
+		color: #fff;
+	}
+}
+
 .why {
 	list-style: none;
 	padding-left: 0;
@@ -306,6 +547,11 @@
 		}
 	}
 
+}
+
+// Shop
+.section__home__shop {
+	background-color: #fff;
 }
 
 

@@ -92,3 +92,16 @@
 		}
 	}
 }
+
+.home {
+	@media (min-width: $mobile-max) {
+		.nav a {
+			color: #fff;
+
+			&:hover {
+				color: $color-red;
+			}
+		}
+	}
+
+}

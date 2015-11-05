@@ -118,8 +118,8 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    // wp_register_style('black-ops', '//fonts.googleapis.com/css?family=Black+Ops+One');
-    // wp_enqueue_style('black-ops');
+    wp_register_style('black-ops', '//fonts.googleapis.com/css?family=Black+Ops+One');
+    wp_enqueue_style('black-ops');
 
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
     wp_enqueue_style('style'); // Enqueue it!

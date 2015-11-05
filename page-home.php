@@ -26,22 +26,34 @@
 
 					<!-- FEATURED course -->
 					<?php if($course == 1): ?>
-						<div class="courses--featured">
+						<div class="home__course--featured section" style="background-image:url(<?php the_field('header_background'); ?>)">
 							<div class="container">
-								<?php the_title(); ?>
+								<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+								<p>Be a certified personal trainer</p>
+								<a href="<?php the_permalink(); ?>" class="btn btn-xlg">Book now >></a>
 							</div>
 						</div>
 					<?php endif; ?>
 
 					<!-- 4 other courses -->
 					<?php if($course == 2): ?>
-					<div class="courses section--red stripes">
+					<div class="home__course section section--red stripes text-center">
 						<div class="container">
+							<h3 class="h2">More exciting courses at PFC</h3>
 							<ul>
 					<?php endif; ?>
 
 					<?php if($course >= 2 ): ?>
-						<li><?php the_title(); ?></li>
+						<li>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" <?php post_class(); ?> style="background-image:url(<?php the_field('header_background'); ?>)">
+								<div class="post__image">
+									<div class="sr-only"><?php the_title(); ?></div>
+								</div>
+								<span>
+									Book now >>
+								</span>
+							</a>
+						</li>
 					<?php endif; ?>
 
 					<?php if($course == 5 ): ?>
@@ -89,12 +101,13 @@
 							<div class="flex-6-12 flex-mobile">
 								<!-- article -->
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<a href="<?php the_permalink(); ?>" class="post__image" style="background-image: url(<?php the_field('header_background') ?>);">
-									</a>
 									<div class="post__body text-center">
-										<h2 class="post-title">
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+											<i class="icon__fitness"></i>
+										</a>
+										<h3 class="post-title">
 											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-										</h2>
+										</h3>
 										<p><?php the_field('lead_introduction'); ?></p>
 										<div class="post__cta">
 											<a href="<?php the_permalink(); ?>" class="btn btn-white btn-white--hover-red">More Info >></a>
@@ -133,7 +146,7 @@
 			<section class="section section--lg section__home__testimonial">
 				<div class="container">
 					<div class="section__header">
-						<h2 class="section-title section-title--display">Clients <span class="color-red">say:</span></h2>
+						<h2 class="section-title section-title--display">What our <span class="color-red">clients say</span></h2>
 					</div>
 					<ul class="testimonials">
 
