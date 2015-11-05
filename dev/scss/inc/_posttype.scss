@@ -247,7 +247,7 @@
 
 
 // -------------------------------
-// POST TYPE - FORM
+// POST TYPE - COURSE
 // -------------------------------
 .tag-featured {
 	position: relative;
@@ -311,6 +311,45 @@
 			width: 167px;
 			height: 112px;
 			background-position: -217px -4px;
+		}
+	}
+}
+
+// -------------------------------
+// POST TYPE - TRAINER
+// -------------------------------
+.trainer {
+	@include clearfix;
+}
+
+.post-type-archive-trainer {
+	.post__trainer__image {
+		margin-left: 30px;
+		float: left;
+
+		img {
+			border-radius: 50%;
+			margin-top: 30px;
+		}
+
+		@media (max-width: $mobile - 1px) {
+			float: none;
+			text-align: center;
+			margin-left: 0;
+		}
+	}
+
+	.post__body {
+		@media (min-width: $mobile) {
+			padding-left: 140px;
+		}
+
+		@media (max-width: $mobile - 1px) {
+			padding-top: 15px;
+
+			h2 {
+				text-align: center;
+			}
 		}
 	}
 }
