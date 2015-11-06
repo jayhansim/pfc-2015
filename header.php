@@ -37,4 +37,25 @@
 
 			<main role="main">
 
+				<?php if(is_woocommerce()) : ?>
+					<!-- Page Title bar -->
+					<section class="section__page-title section__page-title--woocommerce section--red">
+						<div class="container">
+							<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+								<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+							<?php endif; ?>
+							<!-- <h1 class="page-title">PFC Shop</h1> -->
+							<div class="woo__header__search">
+								<?php dynamic_sidebar('woocommerce-header'); ?>
+							</div>
+						</div>
+					</section>
+
+					<div class="woo__breadcrumb">
+						<div class="container">
+							<?php do_action('woo_custom_breadcrumb'); ?>
+						</div>
+					</div>
+				<?php endif; ?>
+
 

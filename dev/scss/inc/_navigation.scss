@@ -91,6 +91,9 @@
 			@include transform(translateX(-50%));
 		}
 	}
+
+	// current page
+	.current-menu-item > a {color: $color-red}
 }
 
 .home {

@@ -240,6 +240,28 @@ if (function_exists('register_sidebar'))
         'before_title' => '<h5>',
         'after_title' => '</h5>'
     ));
+
+    // Woocommerce Header
+    register_sidebar(array(
+        'name' => __('Woocommerce Header', 'html5blank'),
+        'description' => __('Woocommerce Header', 'html5blank'),
+        'id' => 'woocommerce-header',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>'
+    ));
+
+    // Woocommerce Header
+    register_sidebar(array(
+        'name' => __('Woocommerce Sidebar', 'html5blank'),
+        'description' => __('Woocommerce Sidebar', 'html5blank'),
+        'id' => 'woocommerce-sidebar',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="h5">',
+        'after_title' => '</h3>'
+    ));
 }
 
 // Remove wp_head() injected Recent Comment styles
@@ -387,6 +409,47 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+// change woocommerce breadcrumb delimiter
+add_filter( 'woocommerce_breadcrumb_defaults', 'pfc_change_breadcrumb_delimiter' );
+function pfc_change_breadcrumb_delimiter( $defaults ) {
+    // Change the breadcrumb delimeter from '/' to '>'
+    $defaults['delimiter'] = ' &gt; ';
+    return $defaults;
+}
+
+// change home URL
+$blogurl = get_bloginfo('url');
+add_filter( 'woocommerce_breadcrumb_home_url', 'woo_custom_breadrumb_home_url' );
+function woo_custom_breadrumb_home_url() {
+    return $blogurl . '/shop/';
+}
+
+//Reposition WooCommerce breadcrumb
+function woocommerce_remove_breadcrumb(){
+remove_action(
+    'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+}
+add_action(
+    'woocommerce_before_main_content', 'woocommerce_remove_breadcrumb'
+);
+
+function woocommerce_custom_breadcrumb(){
+    woocommerce_breadcrumb();
+}
+
+add_action( 'woo_custom_breadcrumb', 'woocommerce_custom_breadcrumb' );
+
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+    function loop_columns() {
+        return 3; // 3 products per row
+    }
+}
+
+
 
 // Remove P tag around image
 function filter_ptags_on_images($content){

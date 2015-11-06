@@ -1,3 +1,7 @@
+<?php
+/* Template Name: Page One Column */
+?>
+
 <?php get_header(); ?>
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
@@ -16,10 +20,18 @@
 		</div>
 	</section>
 
+	<?php if( is_woocommerce() || is_cart() || is_checkout() || is_account_page()) : ?>
+		<div class="woo__breadcrumb">
+			<div class="container">
+				<?php do_action('woo_custom_breadcrumb'); ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<div class="content">
 		<div class="container">
 			<div class="row">
-				<div class="content__main">
+				<div class="content__main full">
 					<!-- article -->
 					<article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 						<div class="post__body">
@@ -32,7 +44,6 @@
 					<?php comments_template( '', true ); // Remove if you don't want comments ?>
 
 				</div>
-				<?php get_sidebar(); ?>
 			</div>
 		</div>
 	</div>
