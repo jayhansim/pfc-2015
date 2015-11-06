@@ -5,7 +5,17 @@
 		<!-- Page Title bar -->
 		<section class="section__page-title">
 			<div class="container">
-				<h1 class="page-title"><?php _e( 'Latest News', 'html5blank' ); ?></h1>
+				<h1 class="page-title">
+					<?php $page = get_query_var('paged'); ?>
+					<?php if(is_home()) : ?>
+						Latest News
+					<?php elseif(is_search()) : ?>
+						<?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?>
+					<?php endif; ?>
+					<?php if($page != 0): ?>
+						<span class="page-number">Page <?php echo $page; ?></span>
+					<?php endif; ?>
+				</h1>
 			</div>
 		</section>
 

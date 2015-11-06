@@ -167,7 +167,7 @@
 		}
 	}
 
-	&.category-group-training {
+	&.fitness_category-group-training {
 		.post__image::before {
 			width: 124px;
 			background-position: -83px 0;
@@ -285,28 +285,28 @@
 		}
 	}
 
-	&.category-power-plate {
+	&.course_category-power-plate {
 		.post__image::before {
 			width: 131px;
 			height: 108px;
 			background-position: 0 -47px;
 		}
 	}
-	&.category-vipr {
+	&.course_category-vipr {
 		.post__image::before {
 			width: 121px;
 			height: 121px;
 			background-position: -256px -129px;
 		}
 	}
-	&.category-cpr-certification {
+	&.course_category-cpr-certification {
 		.post__image::before {
 			width: 245px;
 			height: 88px;
 			background-position: 0 -163px;
 		}
 	}
-	&.category-rumble-roller {
+	&.course_category-rumble-roller {
 		.post__image::before {
 			width: 167px;
 			height: 112px;
