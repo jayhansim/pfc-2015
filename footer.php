@@ -1,3 +1,5 @@
+			</main>
+
 			<section id="partner" class="partner">
 				<div class="container">
 					<div class="row">
