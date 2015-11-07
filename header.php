@@ -25,7 +25,38 @@
 						<a href="<?php echo home_url(); ?>"></a>
 					</div>
 
-					<nav class="nav" role="navigation">
+					<nav class="nav__mobile">
+						<?php global $woocommerce; ?>
+						<?php $cart_url = $woocommerce->cart->get_cart_url(); ?>
+						<ul>
+							<li>
+								<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" class="nav__mobile__shop"><i></i>Shop</a>
+							</li>
+							<li>
+								<a href="<?php echo $cart_url; ?>" class="nav__mobile__cart"><i></i>Cart</a>
+							</li>
+							<li>
+								<a href="#" id="nav-toggler" class="nav__mobile__menu">
+									<i>
+										<b></b>
+										<b></b>
+										<b></b>
+									</i>
+
+									Menu
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<a href="#" id="nav__mobile" class="nav__mobile">
+						<i class="nav__mobile__1"></i>
+						<i class="nav__mobile__2"></i>
+						<i class="nav__mobile__3"></i>
+					</a>
+
+					<nav id="nav" class="nav" role="navigation">
+
 						<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
 					</nav>
 				</div>

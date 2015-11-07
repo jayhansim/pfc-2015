@@ -37,6 +37,8 @@ body {
 	background-size: 100px 100px;
 	font: 16px/1.5 $font;
 	color: $color;
+  min-height: 100vh;
+  @include transition(transform .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
 }
 
 a {
@@ -73,6 +75,14 @@ h3, .h3 {font-size: 24px; line-height: 1.2}
 h4, .h4 {font-size: 21px;}
 h5, .h5 {font-size: 18px;}
 h6, .h6 {font-size: 16px;}
+
+@media (max-width: $mobile-max) {
+  h1, .h1 {font-size: 27px}
+  h2, .h2 {font-size: 21px}
+  h3, .h3 {font-size: 18px}
+  h4, .h4 {font-size: 18px}
+}
+
 
 .font-display {font-family: $font-display;}
 

@@ -135,18 +135,22 @@
 		position: fixed;
 		background: darken($color-darker,5);
 		right: 0;
-		width: 280px;
+		width: 260px;
 		z-index: 2;
 		top: 0;
 		bottom: 0;
-		box-shadow: 0 0 20px rgba(0,0,0,.5);
-
-		.sub-menu {
-
-		}
+		-webkit-overflow-scrolling: touch;
+		@include transform(translateX(100%));
+		@include transition(transform .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
 	}
+}
 
+.nav--is-toggled {
+	@include transform(translateX(-260px));
 
+	.nav {
+		box-shadow: 0 0 20px rgba(0,0,0,.5);
+	}
 }
 
 
@@ -164,4 +168,91 @@
 
 }
 
-// Media Queries
+// Nav Mobile
+.nav__mobile {
+	float: right;
+
+	ul {
+		margin-bottom: 0;
+	}
+
+	li {
+		display: inline-block;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-family: $font-bold;
+
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		a {
+			//text-decoration: none;
+			color: $color-darker;
+		}
+
+		i {
+			display: block;
+			width: 18px;
+			height: 18px;
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+		}
+	}
+
+	@media (min-width: $tablet) {
+		display: none;
+	}
+
+	&__shop, &__cart {
+
+		i {
+			background: url(../img/mobile-nav-icon.svg) no-repeat;
+
+			.no-svg & {
+				background-image: url(../img/mobile-nav-icon.png);
+			}
+		}
+	}
+
+	&__cart i {background-position: right}
+
+	&__menu {
+		b {
+			display: block;
+			width: 12px;
+			height: 2px;
+			background-color: $color-darker;
+			position: absolute;
+			left: 2px;
+
+			&:first-child {top: 4px; @include transition(all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));}
+			&:nth-child(2) {top: 8px; @include transition(all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));}
+			&:last-child {top: 12px; @include transition(all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));}
+		}
+
+		.nav--is-toggled & {
+			color: $color-red;
+
+			b {
+				background-color: $color-red;
+
+				&:nth-child(2) {display: none;}
+				&:first-child {
+					top: 8px;
+					background-color: $color-red;
+					@include transform(rotate(45deg));
+				}
+				&:last-child {
+					top: 8px;
+					background-color: $color-red;
+					@include transform(rotate(-45deg));
+				}
+
+			}
+
+		}
+	}
+}
+

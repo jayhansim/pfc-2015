@@ -46,7 +46,8 @@
 		text-align: center;
 
 		@media (min-width: $tablet) {
-			padding-left: 20px
+			padding-left: 20px;
+			text-align: left;
 		}
 
 		&:active, &:focus {

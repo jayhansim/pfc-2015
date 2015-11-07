@@ -25,6 +25,7 @@
 
 $(document).ready(function(){
 
+	// Slick0fy testimonial
 	if($('.testimonials').length) {
 		$('.testimonials').slick({
 			dots: true,
@@ -34,6 +35,11 @@ $(document).ready(function(){
 			autoplaySpeed: 5000
 		});
 	}
+
+	// Mobile menu
+	$('#nav-toggler').on('click', function(){
+		$('body').toggleClass('nav--is-toggled');
+	});
 
 	// About - Google maps
 	// When the window has finished loading create our google map below

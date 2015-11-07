@@ -73,6 +73,10 @@
 	.page-title:last-child {
 		margin-bottom: 0;
 	}
+
+	@media (max-width: $mobile-max) {
+		padding: 20px 0 10px;
+	}
 }
 
 .page-title {
