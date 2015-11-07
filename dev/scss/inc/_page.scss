@@ -554,10 +554,15 @@
 }
 
 // Shop
-.section__home__shop {
-	background-color: #fff;
-}
+.woocommerce.columns-4 {
+	margin-top: 30px;
 
+	ul.products li.product {
+		@media (min-width: $desktop) {
+			width: 23.5%;
+		}
+	}
+}
 
 // -------------------------------
 // PAGE - ABOUT

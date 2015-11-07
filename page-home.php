@@ -37,7 +37,7 @@
 				<?php if($course == 2): ?>
 				<div class="home__course section section--red stripes text-center">
 					<div class="container">
-						<h3 class="h2">More exciting courses at PFC</h3>
+						<h3 class="h2">More exciting courses at <PFC!></PFC!></h3>
 						<ul>
 				<?php endif; ?>
 
@@ -201,8 +201,9 @@
 		<div class="container">
 			<div class="section__header">
 				<h2 class="section-title section-title--display">PFC <span class="color-red">Shop</span></h2>
-				<p>Here are some of our latest products from our online store!</p>
+				<p>Here are some of our latest products from our <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>">online store!</a></p>
 			</div>
+			<?php echo do_shortcode('[recent_products per_page="4" columns="4"]'); ?>
 		</div>
 	</section>
 

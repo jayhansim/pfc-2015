@@ -45,12 +45,59 @@
 	<section class="section section__cta" id="form">
 		<div class="container">
 			<div class="section__header">
-				<h2 class="section-title section-title--display">Register Your <span class="color-red">Interest</span></h2>
-				<p><?php the_field('register_text'); ?></p>
+				<h2 class="section-title section-title--display">Upcoming <span class="color-red">Course</span></h2>
+				<?php if(have_rows('upcoming_course')): ?>
+					<p>Here is the upcoming <?php the_title(); ?> Course</p>
+				<?php else : ?>
+					<h5>Sorry, currently we have no upcoming course available.</h5>
+					<p>Do follow us on <a href="https://www.facebook.com/PFC.Malaysia/" target="_blank">Facebook</a> to get latest update on upcoming course!</p>
+				<?php endif; ?>
 			</div>
-			<div class="section__cta__form">
+
+			<div class="section__body">
+				<?php if(have_rows('upcoming_course')): ?>
+				<?php while(have_rows('upcoming_course')) : the_row(); ?>
+					<?php
+						$c_image = get_sub_field('course_image');
+						$c_title = get_sub_field('course_title');
+						$c_description = get_sub_field('course_description');
+						$c_date = get_sub_field('course_date');
+						$c_time = get_sub_field('course_time');
+						$c_language = get_sub_field('course_language');
+						$c_location = get_sub_field('course_location');
+						$c_fee = get_sub_field('course_fee');
+						$c_shop = get_sub_field('course_shop');
+					?>
+					<div class="upcoming">
+						<div class="upcoming__image">
+							<img src="<?php echo $c_image; ?>" alt="<?php echo $c_title; ?>">
+						</div>
+						<div class="upcoming__content">
+							<div class="upcoming__content__main">
+								<h3><?php echo $c_title; ?></h3>
+								<?php echo $c_description; ?>
+
+								<ul class="upcoming__details">
+									<li>Course date: <?php echo $c_date; ?></li>
+									<li>Time: <?php echo $c_time; ?></li>
+									<li>Language: <?php echo $c_language; ?></li>
+									<li>Location: <?php echo $c_location; ?></li>
+								</ul>
+							</div>
+							<div class="upcoming__content__cta">
+								<h4 class="upcoming__fee">RM <?php echo $c_fee; ?></h4>
+								<a href="<?php echo $c_shop; ?>" class="btn btn-red">Book Now >></a>
+							</div>
+						</div>
+					</div>
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</div>
+
+
+			<!-- <div class="section__cta__form">
 				<?php the_field('register'); ?>
-			</div>
+			</div> -->
 
 		</div>
 

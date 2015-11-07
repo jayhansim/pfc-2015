@@ -18,12 +18,13 @@
 	width: 180px;
 	height: 45px;
 	background: url(../img/pfc-logo.png) center no-repeat;
-	background-size: cover;
+	background-size: 180px auto;
 	float: left;
 
 	@media (max-width: $mobile-max) {
 		width: 120px;
 		height: 30px;
+		background-size: 120px auto;
 	}
 }
 
