@@ -26,78 +26,133 @@
 	> ul {
 
 		> li {
-			display: inline-block;
-			padding: 10px;
 
-			&:not(:last-child) {
-				margin-right: 5px;
+			@media (min-width: $tablet) {
+				display: inline-block;
+				padding: 10px;
+
+				&:not(:last-child) {
+					margin-right: 5px;
+				}
+			}
+
+			@media (max-width: $mobile-max) {
+				> a {
+					color: #999;
+					padding: $margin;
+					display: block;
+					border-bottom: 1px dotted #333;
+					background-color: darken($color-darker, 8);
+				}
 			}
 		}
-
 	}
 
 	.menu-item-has-children {
 		position: relative;
 
-		&:hover {
-			.sub-menu {
-				opacity: 1;
-				visibility: visible;
-				top: 100%;
+
+		@media (min-width: $tablet) {
+			&:hover {
+				.sub-menu {
+					opacity: 1;
+					visibility: visible;
+					top: 100%;
+				}
 			}
 		}
 	}
 
 	// sub menu
 	.sub-menu {
-		opacity: 0;
-		visibility: hidden;
-		position: absolute;
-		background: $color-darker;
 		font-family: $font;
 		text-transform: none;
-		text-align: center;
-		left: 50%;
-		@include transform(translateX(-50%));
 		@include transition(all .25s);
 		z-index: 1;
-		border-radius: 2px;
-		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
-		width: 180px;
-		top: 90%;
 
-		a {
-			color: #ccc;
-			padding: 10px 20px;
-			display: block;
-			text-decoration: none;
+		@media (min-width: $tablet) {
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			left: 50%;
+			@include transform(translateX(-50%));
+			width: 180px;
+			top: 90%;
+			border-radius: 2px;
+			box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+			background: $color-darker;
 
-			&:hover {
-				color: #fff;
-				background-color: rgba($color,.5);
+			&::before {
+				width: 0;
+				height: 0;
+				border-width: 8px;
+				border-style: solid;
+				border-color: transparent transparent $color-darker;
+				content: '';
+				position: absolute;
+				top: -16px;
+				left: 50%;
+				@include transform(translateX(-50%));
+			}
+
+			a {
+				color: #ccc;
+				padding: 10px 20px;
+				display: block;
+				text-decoration: none;
+
+				&:hover {
+					color: #fff;
+					background-color: rgba($color,.5);
+				}
 			}
 		}
 
-		&::before {
-			width: 0;
-			height: 0;
-			border-width: 8px;
-			border-style: solid;
-			border-color: transparent transparent $color-darker;
-			content: '';
-			position: absolute;
-			top: -16px;
-			left: 50%;
-			@include transform(translateX(-50%));
+		@media (max-width: $mobile-max) {
+			a {
+				display: block;
+				color: #666;
+				padding: $margin $margin $margin $margin*2;
+
+				&:hover {
+					color: #fff;
+					background-color: rgba($color,.5);
+				}
+			}
 		}
+
+
 	}
 
 	// current page
-	.current-menu-item > a {color: $color-red}
+	.current-menu-item > a {
+		color: $color-red
+	}
+
+	@media (max-width: $mobile-max) {
+		overflow: scroll;
+		position: fixed;
+		background: darken($color-darker,5);
+		right: 0;
+		width: 280px;
+		z-index: 2;
+		top: 0;
+		bottom: 0;
+		box-shadow: 0 0 20px rgba(0,0,0,.5);
+
+		.sub-menu {
+
+		}
+	}
+
+
 }
 
+
+// Custom NAV style for CSS
 .home {
-	@media (min-width: $mobile-max) {
+	@media (min-width: $tablet) {
 		.nav a {
 			color: #fff;
 
@@ -108,3 +163,5 @@
 	}
 
 }
+
+// Media Queries

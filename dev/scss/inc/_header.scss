@@ -20,7 +20,7 @@
 }
 
 .home {
-	@media (min-width: $mobile-max) {
+	@media (min-width: $tablet) {
 		.header {
 			position: absolute;
 			top: 0;
