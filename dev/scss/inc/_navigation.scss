@@ -200,7 +200,7 @@
 // Custom NAV style for CSS
 .home {
 	@media (min-width: $tablet) {
-		.menu > li > a {
+		.nav .menu > li > a {
 			color: #fff;
 
 			&:hover {
@@ -210,7 +210,7 @@
 	}
 
 	&.scrolled-down {
-		.menu > li > a {
+		.nav .menu > li > a {
 			color: $color;
 
 			&:hover {

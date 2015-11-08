@@ -7,7 +7,7 @@
 		<section class="section__page-title section__page-title--single">
 			<div class="container">
 
-				<a href="/" class="btn btn-red btn--latest-news">Latest News</a>
+				<a href="<?php get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-red btn--latest-news">Latest News</a>
 
 				<h1 class="page-title"><?php the_title(); ?></h1>
 				<!-- post details -->

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<!-- Page Title bar -->
-	<section class="section__page-title">
+	<section class="section__page-title section--red">
 		<div class="container">
 			<h1 class="page-title">
 				<?php $page = get_query_var('paged'); ?>

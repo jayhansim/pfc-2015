@@ -2,7 +2,7 @@
 
 
 	<!-- Page Title bar -->
-	<section class="section__page-title">
+	<section class="section__page-title section--red">
 		<div class="container">
 			<h1 class="page-title">Fitness Training</h1>
 		</div>
