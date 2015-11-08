@@ -37,7 +37,7 @@
 				<?php if($course == 2): ?>
 				<div class="home__course section section--red stripes text-center">
 					<div class="container">
-						<h3 class="h2">More exciting courses at <PFC!></PFC!></h3>
+						<h3 class="h2">More exciting courses at PFC!</h3>
 						<ul>
 				<?php endif; ?>
 
