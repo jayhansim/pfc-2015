@@ -70,25 +70,30 @@
 					?>
 					<div class="upcoming">
 						<div class="upcoming__image">
-							<img src="<?php echo $c_image; ?>" alt="<?php echo $c_title; ?>">
+							<a href="<?php echo $c_shop; ?>">
+								<img src="<?php echo $c_image; ?>" alt="<?php echo $c_title; ?>">
+							</a>
 						</div>
 						<div class="upcoming__content">
-							<div class="upcoming__content__main">
-								<h3><?php echo $c_title; ?></h3>
-								<?php echo $c_description; ?>
+							<h3>
+								<a href="<?php echo $c_shop; ?>">
+									<?php echo $c_title; ?>
+								</a>
+							</h3>
+							<?php echo $c_description; ?>
+							<ul class="upcoming__details">
+								<li><strong>Course date:</strong> <?php echo $c_date; ?></li>
+								<li><strong>Time:</strong> <?php echo $c_time; ?></li>
+								<li><strong>Language:</strong> <?php echo $c_language; ?></li>
+								<li><strong>Location:</strong> <?php echo $c_location; ?></li>
+							</ul>
 
-								<ul class="upcoming__details">
-									<li>Course date: <?php echo $c_date; ?></li>
-									<li>Time: <?php echo $c_time; ?></li>
-									<li>Language: <?php echo $c_language; ?></li>
-									<li>Location: <?php echo $c_location; ?></li>
-								</ul>
-							</div>
-							<div class="upcoming__content__cta">
-								<h4 class="upcoming__fee">RM <?php echo $c_fee; ?></h4>
-								<a href="<?php echo $c_shop; ?>" class="btn btn-red">Book Now >></a>
-							</div>
 						</div>
+						<div class="upcoming__cta">
+							<h4 class="upcoming__fee">RM<?php echo $c_fee; ?></h4>
+							<a href="<?php echo $c_shop; ?>" class="btn btn-red">Book Now >></a>
+						</div>
+
 					</div>
 				<?php endwhile; ?>
 				<?php endif; ?>
