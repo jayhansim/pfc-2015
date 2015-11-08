@@ -54,17 +54,18 @@
 						<i class="nav__mobile__2"></i>
 						<i class="nav__mobile__3"></i>
 					</a>
-
-					<nav id="nav" class="nav" role="navigation">
-
-						<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
-					</nav>
 				</div>
-
-
-
 			</header>
 			<!-- /header -->
+
+			<!-- Navigation -->
+			<nav id="nav" class="nav" role="navigation">
+				<div class="container">
+					<?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
+				</div>
+			</nav>
+
+
 
 			<main role="main">
 

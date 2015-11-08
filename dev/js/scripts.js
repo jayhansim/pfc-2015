@@ -40,15 +40,23 @@ $(document).ready(function(){
 
 	// Mobile menu
 	$('#nav-toggler').on('click', function(e){
-		$('body').toggleClass('nav--is-toggled');
+		$('html').toggleClass('nav--is-toggled');
 		e.preventDefault();
 	});
 
 	$(window).on('resize', function(){
-		if($(window).width() >= 768 && $('body').hasClass('nav--is-toggled')) {
-			$('body').removeClass('nav--is-toggled');
+		if($(window).width() >= 768 && $('html').hasClass('nav--is-toggled')) {
+			$('html').removeClass('nav--is-toggled');
 		}
-	})
+	});
+
+	$(window).on('scroll', function(){
+		if($(window).scrollTop() > 100) {
+			$('body').addClass('scrolled-down');
+		} else {
+			$('body').removeClass('scrolled-down');
+		}
+	});
 
 	//smooth scroll to CTA form
 	$('.header__cta a').on('click', function(e){

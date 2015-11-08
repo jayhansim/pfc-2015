@@ -38,7 +38,17 @@ body {
 	font: 16px/1.5 $font;
 	color: $color;
   min-height: 100vh;
-  @include transition(transform .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
+  padding-top: 66px;
+
+  &.home {
+    @media (min-width: $tablet) {
+      padding-top: 0;
+    }
+  }
+
+  > * {
+    @include transition(transform .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
+  }
 }
 
 a {

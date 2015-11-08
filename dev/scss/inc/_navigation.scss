@@ -2,11 +2,42 @@
 // NAVIGATION
 // -------------------------------
 
+// .nav__container {
+// 	@include clearfix;
+// 	position: fixed;
+// 	height: 45px;
+// 	padding-top: 15px;
+// 	top: 0;
+// 	right: 0;
+// 	z-index: 1;
+
+// 	@media (max-width: $mobile-max) {
+
+
+
+// 	}
+// }
+
 .nav {
-	float: right;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 2;
 	font-size: 14px;
 	font-family: $font-bold;
 	text-transform: uppercase;
+
+	@media (min-width: $tablet) {
+		padding-top: $margin;
+		text-align: right;
+	}
+
+	.container {
+		@media (max-width: $mobile-max) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 
 	ul {
 		list-style: none;
@@ -23,24 +54,27 @@
 	}
 
 	// main menu
-	> ul {
+	.container > ul {
 
 		> li {
 
 			@media (min-width: $tablet) {
 				display: inline-block;
-				padding: 10px;
 
 				&:not(:last-child) {
 					margin-right: 5px;
 				}
 			}
 
+			> a {
+				padding: 10px;
+				display: block;
+			}
+
 			@media (max-width: $mobile-max) {
 				> a {
 					color: #999;
 					padding: $margin;
-					display: block;
 					border-bottom: 1px dotted #333;
 					background-color: darken($color-darker, 8);
 				}
@@ -146,10 +180,19 @@
 }
 
 .nav--is-toggled {
-	@include transform(translateX(-260px));
+	overflow-y: scroll;
+
+	body {
+		overflow: hidden;
+
+		> * {
+			@include transform(translateX(-260px));
+		}
+	}
 
 	.nav {
 		box-shadow: 0 0 20px rgba(0,0,0,.5);
+		@include transform(translateX(0));
 	}
 }
 
@@ -157,7 +200,7 @@
 // Custom NAV style for CSS
 .home {
 	@media (min-width: $tablet) {
-		.nav a {
+		.menu > li > a {
 			color: #fff;
 
 			&:hover {
@@ -166,6 +209,15 @@
 		}
 	}
 
+	&.scrolled-down {
+		.menu > li > a {
+			color: $color;
+
+			&:hover {
+				color: $color-red;
+			}
+		}
+	}
 }
 
 // Nav Mobile

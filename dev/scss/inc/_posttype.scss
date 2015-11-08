@@ -158,11 +158,10 @@
 .upcoming {
 	background: #f4f4f4;
 	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.20);
+	margin-bottom: 30px;
 
-
-	@media (min-width: $tablet) {
-		display: table;
-		width: 100%;
+	&:last-child {
+		margin-bottom: 0;
 	}
 
 	> * {
@@ -171,6 +170,11 @@
 			display: table-cell;
 		}
 
+	}
+
+	@media (min-width: $tablet) {
+		display: table;
+		width: 100%;
 	}
 
 	&__image {

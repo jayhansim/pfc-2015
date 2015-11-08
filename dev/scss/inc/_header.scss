@@ -6,20 +6,29 @@
 	background: #fff;
 	padding: 15px 0;
 	@include clearfix;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+	left: 0;
+	@include transition(all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
 
 	@media (max-width: $mobile-max) {
 		box-shadow: 0 1px 10px rgba(0,0,0,.1);
-		position: relative;
-		z-index: 1;
+	}
+
+	.scrolled-down & {
+		box-shadow: 0 1px 10px rgba(0,0,0,.1);
 	}
 }
 
 .header__logo a {
 	width: 180px;
 	height: 45px;
-	background: url(../img/pfc-logo.png) center no-repeat;
+	background: url(../img/pfc-logo.png) #fff center no-repeat;
 	background-size: 180px auto;
 	float: left;
+	box-sizing: content-box;
 
 	@media (max-width: $mobile-max) {
 		width: 120px;
@@ -29,22 +38,27 @@
 }
 
 .home {
+
 	@media (min-width: $tablet) {
 		.header {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
 			background-color: transparent;
-			z-index: 2;
 		}
 
 		.header__logo a {
-			background-color: #fff;
 			padding: 15px;
-			box-sizing: content-box;
+
 			margin-top: -15px;
-			margin-left: 8px;
+		}
+	}
+
+	&.scrolled-down {
+		.header {
+			background-color: #fff;
+
+			&__logo a {
+				padding: 0;
+				margin-top: 0;
+			}
 		}
 	}
 }
