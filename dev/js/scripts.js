@@ -39,9 +39,16 @@ $(document).ready(function(){
 	}
 
 	// Mobile menu
-	$('#nav-toggler').on('click', function(){
+	$('#nav-toggler').on('click', function(e){
 		$('body').toggleClass('nav--is-toggled');
+		e.preventDefault();
 	});
+
+	$(window).on('resize', function(){
+		if($(window).width() >= 768 && $('body').hasClass('nav--is-toggled')) {
+			$('body').removeClass('nav--is-toggled');
+		}
+	})
 
 	//smooth scroll to CTA form
 	$('.header__cta a').on('click', function(e){
