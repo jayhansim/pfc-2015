@@ -13,6 +13,11 @@
 	left: 0;
 	@include transition(all .5s cubic-bezier(0.165, 0.840, 0.440, 1.000));
 
+	> .container {
+		width: auto;
+		max-width: no !important;
+	}
+
 	@media (max-width: $mobile-max) {
 		box-shadow: 0 1px 10px rgba(0,0,0,.1);
 	}
@@ -46,7 +51,7 @@
 
 		.header__logo a {
 			padding: 15px;
-
+			margin-left: -15px;
 			margin-top: -15px;
 		}
 	}
@@ -58,6 +63,7 @@
 			&__logo a {
 				padding: 0;
 				margin-top: 0;
+				margin-left: 0;
 			}
 		}
 	}

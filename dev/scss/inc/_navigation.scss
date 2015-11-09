@@ -20,8 +20,9 @@
 
 .nav {
 	position: fixed;
-	width: 100%;
+	width: 72%;
 	top: 0;
+	right: 0;
 	z-index: 2;
 	font-size: 14px;
 	font-family: $font-bold;
@@ -33,6 +34,8 @@
 	}
 
 	.container {
+		width: auto;
+
 		@media (max-width: $mobile-max) {
 			padding-left: 0;
 			padding-right: 0;
