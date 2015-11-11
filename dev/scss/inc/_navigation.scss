@@ -168,7 +168,7 @@
 	}
 
 	@media (max-width: $mobile-max) {
-		overflow: scroll;
+		overflow-y: scroll;
 		position: fixed;
 		background: darken($color-darker,5);
 		right: 0;
